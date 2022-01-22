@@ -21,8 +21,8 @@ abstract class BaseViewModel : ViewModel() {
     val loaderState: LiveData<Boolean> get() = _loaderState
     private val _loaderState = MutableLiveData<Boolean>()
 
-    val toastableError: LiveData<String?> get() = mToastableError
-    private val mToastableError = SingleLiveEvent<String?>()
+    val toastMessage: LiveData<String?> get() = mToastMessage
+    private val mToastMessage = SingleLiveEvent<String?>()
 
     val navigationEvent: LiveData<NavController.() -> Any> get() = _navigationEvent
     private val _navigationEvent = SingleLiveEvent<NavController.() -> Any>()
@@ -30,7 +30,7 @@ abstract class BaseViewModel : ViewModel() {
     val finishRequest: LiveData<Unit> get() = _finishRequest
     private val _finishRequest = SingleLiveEvent<Unit>()
 
-    protected fun showToast(message: String?) = mToastableError.postValue(message)
+    protected fun showToast(message: String?) = mToastMessage.postValue(message)
 
     protected fun navigateInDirection(directions: NavDirections) {
         _navigationEvent.postValue {
@@ -42,6 +42,13 @@ abstract class BaseViewModel : ViewModel() {
         _navigationEvent.postValue {
             navigateUp()
         }
+    }
+
+    protected fun goBackToScreen(
+        destinyId: Int,
+        inclusive: Boolean
+    ) = _navigationEvent.postValue {
+        popBackStack(destinyId, inclusive)
     }
 
     protected fun showLoader() = _loaderState.postValue(true)

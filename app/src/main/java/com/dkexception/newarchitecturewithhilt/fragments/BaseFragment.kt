@@ -57,7 +57,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
         viewModel.finishRequest.observe(viewLifecycleOwner) {
             mainActivity?.finish()
         }
-        viewModel.toastableError.observe(viewLifecycleOwner) {
+        viewModel.toastMessage.observe(viewLifecycleOwner) {
             mainActivity?.reactOnToast(it)
         }
         viewModel.loaderState.observe(viewLifecycleOwner) {

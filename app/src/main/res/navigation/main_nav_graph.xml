@@ -21,6 +21,45 @@
         android:id="@+id/fragmentTwo"
         android:name="com.dkexception.newarchitecturewithhilt.fragments.FragmentTwo"
         android:label="fragment_two"
-        tools:layout="@layout/fragment_two" />
+        tools:layout="@layout/fragment_two">
+
+        <action
+            android:id="@+id/goToFragmentThree"
+            app:destination="@id/fragmentThree" />
+
+        <action
+            android:id="@+id/goToFragmentFive"
+            app:destination="@id/fragmentFive" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.dkexception.newarchitecturewithhilt.fragments.FragmentThree"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three">
+
+        <action
+            android:id="@+id/goToFragmentFour"
+            app:destination="@id/fragmentFour" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.dkexception.newarchitecturewithhilt.fragments.FragmentFour"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four">
+
+        <action
+            android:id="@+id/goToFragmentFive"
+            app:destination="@id/fragmentFive" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentFive"
+        android:name="com.dkexception.newarchitecturewithhilt.fragments.FragmentFive"
+        android:label="fragment_five"
+        tools:layout="@layout/fragment_five" />
 
 </navigation>

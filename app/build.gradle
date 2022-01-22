@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
@@ -39,3 +40,7 @@ android {
 }
 
 apply from: './dependencies.gradle'
+
+dependencies {
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}

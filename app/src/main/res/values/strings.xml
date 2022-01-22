@@ -1,4 +1,36 @@
 <resources>
+
+    <!-- Common -->
     <string name="app_name">NewArchitectureWithHilt</string>
     <string name="generic_error">Something went wrong!</string>
+    <string name="next">Next</string>
+
+    <!-- Screen 1 -->
+    <string name="numberOne">1</string>
+    <string name="welcome_to_the_new_architecture">Welcome to the new architecture!</string>
+    <string name="goToScreen2">Go to Screen 2</string>
+
+    <!-- Screen 2 -->
+    <string name="numberTwo">2</string>
+    <string name="enter_a_number">Enter a number between 1 and 100</string>
+    <string name="enter_a_valid_number">Number must be between 1 and 100!</string>
+
+    <!-- Screen 3 -->
+    <string name="numberThree">3</string>
+    <string name="entered_number">Hey! You entered number %d</string>
+
+    <!-- Screen 4 -->
+    <string name="numberFour">4</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_city">Enter your city</string>
+    <string name="invalid_name">Length must be in between 2 to 20 characters</string>
+    <string name="invalid_email">Please enter a valid email</string>
+    <string name="invalid_city">Length must be in between 2 to 20 characters</string>
+
+    <!-- Screen 5 -->
+    <string name="numberFive">5</string>
+    <string name="flow_completion">You\'ve completed the flow successfully!</string>
+    <string name="finish">Finish!</string>
+
 </resources>

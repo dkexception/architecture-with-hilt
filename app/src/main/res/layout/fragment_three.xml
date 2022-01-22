@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context="com.dkexception.newarchitecturewithhilt.fragments.FragmentOne">
+    tools:context="com.dkexception.newarchitecturewithhilt.fragments.FragmentThree">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvOne"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvThree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="@string/numberOne"
+        android:text="@string/numberThree"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -20,22 +20,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvWelcome"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNumberDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/welcome_to_the_new_architecture"
-        app:layout_constraintBottom_toTopOf="@id/btnOne"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@id/btnThree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvOne" />
+        app:layout_constraintTop_toBottomOf="@id/tvThree"
+        app:layout_constraintVertical_bias="0.2"
+        tools:text="@string/entered_number" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnOne"
+        android:id="@+id/btnThree"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="@string/goToScreen2"
+        android:text="@string/next"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
