@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:padding="16dp"
     tools:context="com.dkexception.newarchitecturewithhilt.fragments.FragmentFour">
 

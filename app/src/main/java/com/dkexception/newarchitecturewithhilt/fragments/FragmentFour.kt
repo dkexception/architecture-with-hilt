@@ -1,5 +1,6 @@
 package com.dkexception.newarchitecturewithhilt.fragments
 
+import android.view.inputmethod.EditorInfo
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -19,11 +20,11 @@ class FragmentFour : BaseFragment<FragmentFourBinding, ViewModelFour>(
 
     override fun setupUI() {
         super.setupUI()
-        setupTextChangeListeners()
+        setupObservers()
         binding.btnFour.setOnClickAction(viewModel::onNextButtonClicked)
     }
 
-    private fun setupTextChangeListeners() = binding.run {
+    private fun setupObservers() = binding.run {
         nameField.doAfterTextChanged {
             viewModel.setName(it.toString())
         }
@@ -32,6 +33,12 @@ class FragmentFour : BaseFragment<FragmentFourBinding, ViewModelFour>(
         }
         cityField.doAfterTextChanged {
             viewModel.setCity(it.toString())
+        }
+        cityField.setOnEditorActionListener { _, i, _ ->
+            if (i == EditorInfo.IME_ACTION_DONE && binding.btnFour.isEnabled) {
+                binding.btnFour.performClick()
+            }
+            true
         }
     }
 

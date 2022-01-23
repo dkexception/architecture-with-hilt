@@ -5,4 +5,6 @@ import android.view.ViewGroup
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
 
-object Utils
+object Utils {
+    const val lineSeparator = "line.separator"
+}

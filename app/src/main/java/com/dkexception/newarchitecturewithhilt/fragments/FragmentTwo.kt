@@ -1,5 +1,6 @@
 package com.dkexception.newarchitecturewithhilt.fragments
 
+import android.view.inputmethod.EditorInfo
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +28,12 @@ class FragmentTwo : BaseFragment<FragmentTwoBinding, ViewModelTwo>(
         binding.numberField.doAfterTextChanged {
             val enteredText = it?.toString()
             viewModel.onNumberFieldUpdated(enteredText)
+        }
+        binding.numberField.setOnEditorActionListener { _, i, _ ->
+            if (i == EditorInfo.IME_ACTION_DONE && binding.btnTwo.isEnabled) {
+                binding.btnTwo.performClick()
+            }
+            true
         }
         binding.btnTwo.setOnClickAction(viewModel::onMainButtonClicked)
     }
