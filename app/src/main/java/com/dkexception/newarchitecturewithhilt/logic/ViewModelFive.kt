@@ -19,7 +19,7 @@ class ViewModelFive @Inject constructor(
 
     fun onMainButtonClicked() {
         mainDataSource.setDetailsFromScreen4(null)
-        goBackToScreen(
+        goBackUpTo(
             destinyId = R.id.fragmentOne,
             inclusive = true
         )
